@@ -11,7 +11,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # Add this step to ensure repository files are available
+        uses: actions/checkout@v2  # Ensure repository files are available
+
+      - name: Install OpenVPN
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y openvpn
 
       - name: Connect to ProtonVPN
         run: |
