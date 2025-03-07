@@ -1,4 +1,4 @@
-name: Auto 
+name: Auto
 
 on:
   schedule:
@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # Add this step to ensure repository files are available
+
       - name: Connect to ProtonVPN
         run: |
           # Use the config.ovpn file from the .github folder
